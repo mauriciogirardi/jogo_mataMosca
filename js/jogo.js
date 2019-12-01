@@ -6,7 +6,7 @@ var tempo = 15
 function ajustaTamanhoPalcoJogo(){
     height = window.innerHeight
     width = window.innerWidth
-    console.log(width,height)
+    //console.log(width,height)
 }
 
 ajustaTamanhoPalcoJogo()
@@ -18,6 +18,7 @@ var cronometro = setInterval(function(){
     if(tempo < 0) {
         clearInterval(cronometro)
         clearInterval(criaMosca)
+        window.location.href = 'vitoria.html'
     } else {
         document.getElementById('cronometro').innerHTML = tempo
     }

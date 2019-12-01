@@ -88,5 +88,6 @@ body {
    
     .game__over {
         width: 400px;
+        padding: 0 2%;
     }
 }
