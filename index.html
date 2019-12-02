@@ -4,21 +4,35 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>JOGO MATA MOSQUITO</title>
+        <title>JOGO MATA MOSCA</title>
         <link rel="stylesheet" href="css/style.css">
+        <script>
+            function iniciarJogo(){
+                var nivel = document.getElementById('nivel').value
+
+                if(nivel === '') {
+                    alert('Selecione um nível para iniciar o jogo!')
+                    return false
+                }
+                
+                window.location.href = 'app.html?' + nivel
+            }
+        </script>
     </head>
-    <body onresize="ajustaTamanhoPalcoJogo()">
-        <div class="painel">
-            <div class="vidas">
-                <img id="v1" src="image/coracao_cheio.png">
-                <img id="v2" src="image/coracao_cheio.png">
-                <img id="v3" src="image/coracao_cheio.png">
-            </div>
-            <div class="cronometro">
-                <p>Tempo restante: <span id="cronometro"></span></p>
-            </div>
+    <body>
+
+        <div class="container__gameover">
+            <img class="game__inicio" src="image/game.png">     
+        </div>    
+        <div class="box__select">
+            <select class="from__control" id="nivel">
+                <option value="">Selecione o nível</option>
+                <option value="normal">Normal</option>
+                <option value="dificil">Difícil</option>
+                <option value="chucknorris">Chuck Norris</option>
+            </select>
         </div>
-        <!-- <img class="mosca__1" src="image/mosca.png" alt="imagem de mosquito do app"> -->        
-        <script src="js/jogo.js"></script>
+        <button onclick="iniciarJogo()" class="button__iniciar">iniciar o jogo</button>  
+        
     </body>
 </html>

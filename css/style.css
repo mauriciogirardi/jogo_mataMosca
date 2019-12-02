@@ -4,11 +4,16 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
+html {
+    cursor: url('../image/mata_mosca.png')30 30,auto;
+}
 body {
+    background-color: #333;
     background-image: url('../image/bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
+    overflow: hidden;
 }
 
 .painel {
@@ -27,6 +32,25 @@ body {
 }
 .cronometro p {
     font-weight: bold;
+}
+/* pagina inicial index */
+.game__inicio {
+    width: 400px;
+}
+.box__select {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.box__select select {
+    height: 40px;
+    width: 167px;
+    outline: none;
+    border: 0;
+    border-radius: 10px;
+    font-size: 16px;
+    padding: 2px;
 }
 
 /* fim_de_jogo.html */
@@ -49,7 +73,7 @@ body {
     top: 85%;
     left: 50%;
     transform: translate(-50%,-50%);
-
+    outline: none;
 }
 
 
@@ -82,11 +106,9 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-    body{
-        height: 115vh;
-    }
    
     .game__over {
+        overflow: hidden;
         width: 400px;
         padding: 0 2%;
     }

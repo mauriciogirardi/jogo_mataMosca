@@ -3,6 +3,23 @@ var width = 0
 var vidas = 1
 var tempo = 15
 
+//desenvolvendo o nivel do jogo
+var criaMoscaTempo = 1500
+var nivel = window.location.search
+nivel = nivel.replace('?','')
+
+if(nivel === 'normal') {
+    //1500
+    criaMoscaTempo = 1500
+} else if(nivel === 'dificil') {
+    //1000
+    criaMoscaTempo = 1000
+} else if(nivel === 'chucknorris') {
+    //750
+    criaMoscaTempo = 750
+}
+
+
 function ajustaTamanhoPalcoJogo(){
     height = window.innerHeight
     width = window.innerWidth
@@ -66,7 +83,7 @@ var criaMosca = setInterval(function(){
 
     document.body.appendChild(mosquito)
     
-}, 2000)
+}, criaMoscaTempo)
 
 function tamanhoAleatorio(){
     var classe = Math.floor(Math.random() * 3)
